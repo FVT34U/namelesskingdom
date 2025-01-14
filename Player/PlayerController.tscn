@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://drix444yx4k6d"]
+
+[ext_resource type="Script" path="res://Player/player_controller.gd" id="1_8tdau"]
+
+[node name="PlayerController" type="Node2D" node_paths=PackedStringArray("pawns")]
+script = ExtResource("1_8tdau")
+pawns = [null]
+
+[node name="Camera2D" type="Camera2D" parent="."]

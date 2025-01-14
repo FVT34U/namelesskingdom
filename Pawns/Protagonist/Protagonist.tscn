@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://hdtppxog0mhg"]
+
+[ext_resource type="PackedScene" uid="uid://d4kblxxolc4e7" path="res://Pawns/BasePawn.tscn" id="1_27bdo"]
+[ext_resource type="Script" path="res://Pawns/Protagonist/protagonist.gd" id="1_gffoa"]
+
+[node name="BasePawn" instance=ExtResource("1_27bdo")]
+script = ExtResource("1_gffoa")

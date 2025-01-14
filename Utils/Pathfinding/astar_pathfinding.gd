@@ -1,5 +1,5 @@
 extends Node
-
+class_name AStarPathfinding
 
 var astar = AStar2D.new()
 @export var walkable_tilemap_layer: TileMapLayer = null

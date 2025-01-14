@@ -1,0 +1,2 @@
+extends BasePawn
+class_name ProtagonistPawn

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4kblxxolc4e7"]
+
+[ext_resource type="Script" path="res://Pawns/base_pawn.gd" id="1_l4o0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lj2h"]
+
+[node name="BasePawn" type="CharacterBody2D"]
+script = ExtResource("1_l4o0w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6lj2h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

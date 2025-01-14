@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var SPEED = 220.0
 
 @onready var world = get_parent()
+@onready var astar_pathfinding = world.get_node("AStarPathfinding")
 @onready var camera = $Camera2D
 
 var path: Array = []
@@ -36,7 +37,7 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
-		var new_path = world.get_node("AStarPathfinding")\
+		var new_path = astar_pathfinding\
 		.get_astar_path(global_position, camera.get_global_mouse_position())
 		
 		path = new_path

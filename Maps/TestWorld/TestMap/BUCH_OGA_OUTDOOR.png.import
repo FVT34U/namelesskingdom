@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7l4ydiqtu6th"
-path="res://.godot/imported/Dungeon_Tileset.png-b93dcb3a5583b5e3746dc4e50267f91f.ctex"
+uid="uid://crfrdvy1r60ei"
+path="res://.godot/imported/BUCH_OGA_OUTDOOR.png-ac4d833329a23aef06bcfd1de97173a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/TestWorld/MainMap/Dungeon_Tileset.png"
-dest_files=["res://.godot/imported/Dungeon_Tileset.png-b93dcb3a5583b5e3746dc4e50267f91f.ctex"]
+source_file="res://Maps/TestWorld/TestMap/BUCH_OGA_OUTDOOR.png"
+dest_files=["res://.godot/imported/BUCH_OGA_OUTDOOR.png-ac4d833329a23aef06bcfd1de97173a7.ctex"]
 
 [params]
 

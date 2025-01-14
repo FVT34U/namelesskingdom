@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://dod2yoek5damo"]
 
-[ext_resource type="Script" path="res://Maps/TestWorld/MainMap/test_main.gd" id="1_8kamx"]
-[ext_resource type="TileSet" uid="uid://c4loxw6mfyri3" path="res://Maps/TestWorld/MainMap/TestMainTileSet.tres" id="1_rhu47"]
+[ext_resource type="Script" path="res://Maps/TestWorld/TestMap/test_main.gd" id="1_8kamx"]
+[ext_resource type="TileSet" uid="uid://c4loxw6mfyri3" path="res://Maps/TestWorld/TestMap/TestMainTileSet.tres" id="1_rhu47"]
 [ext_resource type="PackedScene" uid="uid://b1bw0ohbs4m0e" path="res://Player/Player.tscn" id="2_y7njh"]
 [ext_resource type="Script" path="res://Utils/Pathfinding/astar_pathfinding.gd" id="3_a2hxq"]
 
@@ -28,9 +28,10 @@ tile_map_data = PackedByteArray("AAAQAP//AQAMAAoAAAAQAAAAAQAMAAsAAAAZAP//AQAPAAo
 tile_set = ExtResource("1_rhu47")
 
 [node name="Player" parent="." instance=ExtResource("2_y7njh")]
+position = Vector2(-8, -8)
 SPEED = 300.0
 
-[node name="AStarPathfinding" type="Node" parent="." node_paths=PackedStringArray("walkable_tilemap_layers") groups=["AStar"]]
+[node name="AStarPathfinding" type="Node" parent="." node_paths=PackedStringArray("walkable_tilemap_layer") groups=["AStar"]]
 unique_name_in_owner = true
 script = ExtResource("3_a2hxq")
-walkable_tilemap_layers = [NodePath("../Walkable")]
+walkable_tilemap_layer = NodePath("../Walkable")

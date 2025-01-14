@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crfrdvy1r60ei"
-path="res://.godot/imported/BUCH_OGA_OUTDOOR.png-a141b1321a2f4f8158858d30ea65cdf0.ctex"
+uid="uid://c8lbr2ejfhhk2"
+path="res://.godot/imported/dungeon_tiles.png-5f4b70099936e2ca14444485832f12ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/TestWorld/MainMap/BUCH_OGA_OUTDOOR.png"
-dest_files=["res://.godot/imported/BUCH_OGA_OUTDOOR.png-a141b1321a2f4f8158858d30ea65cdf0.ctex"]
+source_file="res://Maps/TestWorld/TestMap/dungeon_tiles.png"
+dest_files=["res://.godot/imported/dungeon_tiles.png-5f4b70099936e2ca14444485832f12ec.ctex"]
 
 [params]
 

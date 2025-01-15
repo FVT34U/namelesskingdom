@@ -28,3 +28,17 @@ func _input(event):
 		
 		path = new_path
 		# control how to move pawns by state
+
+
+func _move():
+	match state:
+		states.WALKING: _move_pawns()
+		states.BATTLE: _move_pawn()
+
+
+func _move_pawns():
+	pass
+
+
+func _move_pawn():
+	pass

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wopge4tuaowd" path="res://Player/Someone_Walk.png" id="1_y8mbu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xsbgx"]
-size = Vector2(16, 5)
+size = Vector2(14, 4)
 
 [sub_resource type="Animation" id="Animation_p16mi"]
 length = 0.001

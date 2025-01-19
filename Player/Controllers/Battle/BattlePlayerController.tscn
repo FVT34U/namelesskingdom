@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://70wrvft6j17m"]
+
+[ext_resource type="PackedScene" uid="uid://drix444yx4k6d" path="res://Player/Controllers/Base/BasePlayerController.tscn" id="1_ynaxl"]
+[ext_resource type="Script" path="res://Player/Controllers/Battle/battle_player_controller.gd" id="2_urlp5"]
+
+[node name="PlayerController" instance=ExtResource("1_ynaxl")]
+script = ExtResource("2_urlp5")

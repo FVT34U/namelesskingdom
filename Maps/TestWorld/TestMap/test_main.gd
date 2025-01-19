@@ -18,8 +18,8 @@ func _draw():
 		var pairs = astar.get_point_connections(i)
 		for p in pairs:
 			draw_line(
-				%AStarPathfinding.walkable_tilemap_layers[0].map_to_local(astar.get_point_position(i)),
-				%AStarPathfinding.walkable_tilemap_layers[0].map_to_local(astar.get_point_position(p)),
+				%AStarPathfinding.walkable_tilemap_layer.map_to_local(astar.get_point_position(i)),
+				%AStarPathfinding.walkable_tilemap_layer.map_to_local(astar.get_point_position(p)),
 				Color(1, 0, 0),
 				1.0
 			)

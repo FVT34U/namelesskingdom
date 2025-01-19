@@ -13,6 +13,8 @@ func _physics_process(delta):
 	if not path.is_empty():
 		if cur_point == null:
 			cur_point = _get_next_path_point()
+		
+		if cur_point == null:
 			return
 		
 		var direction = global_position.direction_to(cur_point)
@@ -24,10 +26,15 @@ func _physics_process(delta):
 			cur_point = null
 
 
+func set_path(new_path: Array) -> void:
+	path = new_path
+
+
 func _get_next_path_point():
 	if path_idx >= path.size():
 		path_idx = 0
 		path = []
+		cur_point = null
 		return null
 	var value = path[path_idx]
 	path_idx += 1
@@ -35,4 +42,19 @@ func _get_next_path_point():
 
 
 func _update_animation(dir: Vector2):
-	pass
+	match dir:
+		Vector2.UP: $AnimationPlayer.play("move_forward")
+		Vector2.DOWN: $AnimationPlayer.play("move_backward")
+		Vector2.LEFT: $AnimationPlayer.play("move_left")
+		Vector2.RIGHT: $AnimationPlayer.play("move_right")
+		_ :
+			if dir.x > 0 and dir.y > 0:
+				$AnimationPlayer.play("move_backward")
+			elif dir.x < 0 and dir.y > 0:
+				$AnimationPlayer.play("move_backward")
+			elif dir.x < 0 and dir.y < 0:
+				$AnimationPlayer.play("move_forward")
+			elif dir.x > 0 and dir.y < 0:
+				$AnimationPlayer.play("move_forward")
+			else:
+				$AnimationPlayer.play("RESET")

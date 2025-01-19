@@ -1,5 +1,5 @@
 extends Node2D
-class_name PlayerController
+class_name BasePlayerController
 
 
 @export var pawns: Array[BasePawn] = []
@@ -10,15 +10,12 @@ class_name PlayerController
 
 @onready var active_pawn: BasePawn = pawns[0]
 
-enum states {
-	WALKING,
-	BATTLE,
-}
-var state = states.WALKING
-
 var path: Array = []
-var cur_point = null
-var path_idx = 0
+
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		EventBus.battle_starts.emit()
 
 
 func _input(event):
@@ -27,18 +24,7 @@ func _input(event):
 		.get_astar_path(global_position, camera.get_global_mouse_position())
 		
 		path = new_path
-		# control how to move pawns by state
-
-
-func _move():
-	match state:
-		states.WALKING: _move_pawns()
-		states.BATTLE: _move_pawn()
-
+		_move_pawns()
 
 func _move_pawns():
-	pass
-
-
-func _move_pawn():
 	pass

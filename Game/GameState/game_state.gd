@@ -26,7 +26,7 @@ func _ready():
 	for pawn in pawns_to_load:
 		var p = pawn.instantiate()
 		get_parent().add_child.call_deferred(p)
-		p.global_position = Vector2(idx * 16, 0)
+		p.global_position = Vector2(idx * 32, 0)
 		player_controller.pawns.append(p)
 		idx += 1
 

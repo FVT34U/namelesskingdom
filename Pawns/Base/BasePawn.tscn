@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4kblxxolc4e7"]
+[gd_scene load_steps=4 format=3 uid="uid://d4kblxxolc4e7"]
 
 [ext_resource type="Script" path="res://Pawns/Base/base_pawn.gd" id="1_l4o0w"]
+[ext_resource type="Script" path="res://Pawns/Base/path_drawer.gd" id="2_4lsbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lj2h"]
 size = Vector2(2, 2)
@@ -9,9 +10,16 @@ size = Vector2(2, 2)
 script = ExtResource("1_l4o0w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6lj2h")
 disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="PathDrawer" type="Node2D" parent="."]
+top_level = true
+z_index = 1
+script = ExtResource("2_4lsbw")
+path_color = Color(1, 1, 1, 1)

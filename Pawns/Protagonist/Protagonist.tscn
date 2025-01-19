@@ -96,14 +96,10 @@ _data = {
 script = ExtResource("1_gffoa")
 
 [node name="Sprite2D" parent="." index="0"]
-z_index = 10
 texture = ExtResource("3_hpryd")
 hframes = 3
 vframes = 4
 frame = 7
-
-[node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, 13)
 
 [node name="AnimationPlayer" parent="." index="2"]
 libraries = {

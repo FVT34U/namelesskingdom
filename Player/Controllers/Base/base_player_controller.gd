@@ -21,7 +21,7 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
 		var new_path = astar_pathfinding\
-		.get_astar_path(global_position, camera.get_global_mouse_position())
+		.get_astar_path(active_pawn.global_position, camera.get_global_mouse_position())
 		
 		path = new_path
 		_move_pawns()

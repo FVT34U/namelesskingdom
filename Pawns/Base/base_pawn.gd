@@ -35,6 +35,7 @@ func _physics_process(delta):
 
 func set_path(new_path: Array) -> void:
 	path = new_path
+	path_idx = 0
 	cur_point = _get_next_path_point()
 
 

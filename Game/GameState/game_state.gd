@@ -31,8 +31,16 @@ func _ready():
 		idx += 1
 
 
+func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		match state:
+			states.IDLE: EventBus.battle_starts.emit()
+			states.BATTLE: EventBus.battle_ends.emit()
+
+
 func _on_battle_starts():
 	print("Battle starts")
+	state = states.BATTLE
 	
 	var pawns_copy = []
 	for pawn in player_controller.pawns:
@@ -44,11 +52,14 @@ func _on_battle_starts():
 	for pawn in pawns_copy:
 		player_controller.pawns.append(pawn)
 	
+	player_controller.global_position = player_controller.pawns[0].global_position
+	
 	get_parent().add_child.call_deferred(player_controller)
 
 
 func _on_battle_ends():
 	print("Battle ends")
+	state = states.IDLE
 	
 	var pawns_copy = []
 	for pawn in player_controller.pawns:
@@ -59,5 +70,7 @@ func _on_battle_ends():
 	player_controller = idle_player_controller.instantiate()
 	for pawn in pawns_copy:
 		player_controller.pawns.append(pawn)
-		
+	
+	player_controller.global_position = player_controller.pawns[0].global_position
+	
 	get_parent().add_child.call_deferred(player_controller)

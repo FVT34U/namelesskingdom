@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://hdtppxog0mhg"]
+[gd_scene load_steps=11 format=3 uid="uid://hdtppxog0mhg"]
 
 [ext_resource type="PackedScene" uid="uid://d4kblxxolc4e7" path="res://Pawns/Base/BasePawn.tscn" id="1_27bdo"]
 [ext_resource type="Script" path="res://Pawns/Protagonist/protagonist.gd" id="1_gffoa"]
-[ext_resource type="Texture2D" uid="uid://wopge4tuaowd" path="res://Player/Someone_Walk.png" id="3_hpryd"]
+[ext_resource type="Texture2D" uid="uid://wopge4tuaowd" path="res://Player/Animations/Someone_Walk.png" id="3_hpryd"]
 
 [sub_resource type="Animation" id="Animation_ac4o8"]
 length = 0.001
@@ -92,6 +92,9 @@ _data = {
 "move_right": SubResource("Animation_1nf3o")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44bsn"]
+size = Vector2(18, 29)
+
 [node name="Protagonist" instance=ExtResource("1_27bdo")]
 script = ExtResource("1_gffoa")
 
@@ -105,3 +108,7 @@ frame = 7
 libraries = {
 "": SubResource("AnimationLibrary_5fh7r")
 }
+
+[node name="CollisionShape2D" parent="ClickBox" index="0"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_44bsn")

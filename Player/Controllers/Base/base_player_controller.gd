@@ -10,18 +10,23 @@ class_name BasePlayerController
 
 @onready var active_pawn: BasePawn = pawns[0]
 
-var path: Array = []
+var path: Array[Vector2] = []
+
+var prev_position = Vector2(0, 0)
 
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		EventBus.battle_starts.emit()
+	if prev_position != active_pawn.global_position:
+		global_position = active_pawn.global_position
+		prev_position = global_position
 
 
-func _input(event):
-	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
-		var new_path = astar_pathfinding\
-		.get_astar_path(active_pawn.global_position, camera.get_global_mouse_position())
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("left_click"):
+		var new_path = astar_pathfinding.get_astar_path(
+			active_pawn.global_position,
+			camera.get_global_mouse_position(),
+		)
 		
 		path = new_path
 		_move_pawns()

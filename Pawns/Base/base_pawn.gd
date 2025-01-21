@@ -8,7 +8,7 @@ class_name BasePawn
 @onready var astar_pathfinding: AStarPathfinding = world.get_node("AStarPathfinding")
 @onready var astar = astar_pathfinding.astar
 
-var path: Array = []
+var path: Array[Vector2] = []
 var cur_point = null
 var path_idx = 0
 
@@ -24,25 +24,22 @@ func _physics_process(delta):
 		_update_animation(direction.round())
 	
 		if global_position.round().is_equal_approx(cur_point):
-			#if Input.is_action_pressed("magic_button"):
-				#print(
-					#global_position.round(),
-					#" ",
-					#cur_point,
-				#)
 			cur_point = _get_next_path_point()
 
 
-func set_path(new_path: Array) -> void:
+func set_path(new_path: Array[Vector2]) -> void:
 	path = new_path
 	path_idx = 0
 	cur_point = _get_next_path_point()
+	
+	%PathDrawer.set_path_to_draw(path)
 
 
 func _get_next_path_point():
 	if path_idx >= path.size():
 		path_idx = 0
 		path = []
+		%PathDrawer.set_path_to_draw(path)
 		return null
 	var value = path[path_idx]
 	path_idx += 1

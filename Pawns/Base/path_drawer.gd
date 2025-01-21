@@ -5,11 +5,11 @@ class_name PathDrawer
 @export var path_color: Color
 @export var is_drawing = true
 
-@onready var path = get_parent().path
+var path: Array[Vector2] = []
 
 
-func _physics_process(delta):
-	path = get_parent().path # fucking bullshit needs to be rewritted
+func set_path_to_draw(new_path: Array[Vector2]):
+	path = new_path
 	queue_redraw()
 
 

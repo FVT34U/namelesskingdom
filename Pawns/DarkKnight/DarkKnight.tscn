@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://khimya3vw4i2"]
+[gd_scene load_steps=11 format=3 uid="uid://khimya3vw4i2"]
 
 [ext_resource type="PackedScene" uid="uid://d4kblxxolc4e7" path="res://Pawns/Base/BasePawn.tscn" id="1_8qf67"]
 [ext_resource type="Script" path="res://Pawns/DarkKnight/dark_knight.gd" id="2_3ykm1"]
@@ -92,6 +92,9 @@ _data = {
 "move_right": SubResource("Animation_3vkop")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlfcp"]
+size = Vector2(18, 31)
+
 [node name="DarkKnight" instance=ExtResource("1_8qf67")]
 script = ExtResource("2_3ykm1")
 
@@ -108,3 +111,7 @@ libraries = {
 
 [node name="PathDrawer" parent="." index="3"]
 path_color = Color(1, 0.486275, 1, 1)
+
+[node name="CollisionShape2D" parent="ClickBox" index="0"]
+position = Vector2(0, -13.5)
+shape = SubResource("RectangleShape2D_vlfcp")

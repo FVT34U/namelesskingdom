@@ -28,11 +28,11 @@ func _setup_astar():
 				astar.connect_points(i, cl_p)
 
 
-func get_astar_path(start: Vector2, end: Vector2):
+func get_astar_path(start: Vector2, end: Vector2) -> Array[Vector2]:
 	var s = astar.get_closest_point(walkable_tilemap_layer.local_to_map(start))
 	var e = astar.get_closest_point(walkable_tilemap_layer.local_to_map(end))
 	
-	var path_position = []
+	var path_position: Array[Vector2] = []
 	
 	for point in astar.get_point_path(s, e):
 		path_position.append(walkable_tilemap_layer.map_to_local(point))
